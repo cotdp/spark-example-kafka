@@ -1,0 +1,4 @@
+#!/bin/bash
+set -e
+spark-submit --total-executor-cores 4 --executor-memory 2G \
+    --class spark.example.kafka.KafkaWordCount target/scala-2.10/spark-example-kafka_2.10-1.0.jar $*

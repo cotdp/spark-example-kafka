@@ -1,0 +1,3 @@
+#!/bin/bash
+set -e
+scala -cp target/scala-2.10/spark-example-kafka_2.10-1.0.jar spark.example.kafka.KafkaWordCountProducer $*
