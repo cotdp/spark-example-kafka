@@ -13,12 +13,12 @@ jarName in assembly := "spark-example-kafka_2.10-1.0.jar"
 assemblyOption in assembly ~= { _.copy(includeScala = false) }
 
 libraryDependencies ++= Seq(
-	"org.apache.spark" %% "spark-core" % "1.0.0" % "provided",
-	"org.apache.spark" %% "spark-streaming" % "1.0.0" % "provided",
-	("org.apache.spark" %% "spark-streaming-kafka" % "1.0.0").
-	    exclude("commons-beanutils", "commons-beanutils").
-	    exclude("commons-collections", "commons-collections")
-	    exclude("com.esotericsoftware.minlog", "minlog")
+  "org.apache.spark" %% "spark-core" % "1.0.0" % "provided",
+  "org.apache.spark" %% "spark-streaming" % "1.0.0" % "provided",
+  ("org.apache.spark" %% "spark-streaming-kafka" % "1.0.0").
+    exclude("commons-beanutils", "commons-beanutils").
+    exclude("commons-collections", "commons-collections").
+    exclude("com.esotericsoftware.minlog", "minlog")
 )
 
 mergeStrategy in assembly <<= (mergeStrategy in assembly) { (old) =>
